@@ -42,30 +42,30 @@ export default class MealService {
 
     static #recommendations = [1, 8, 15, 21]
 
-  static getCategories() {
-    try {
-        return this.#categories;
-    } catch(error){
-        console.log("SKLT | ERROR getCategories |", error);
-        return []
+    static getCategories() {
+        try {
+            return this.#categories;
+        } catch(error){
+            console.log("SKLT | ERROR getCategories |", error);
+            return []
+        }
     }
-  }
 
-  static getRecommendations(){
-    try {
-        return this.#meals.filter(meal => this.#recommendations.includes(meal.id))
-    } catch(error){
-        console.log("SKLT | ERROR getRecommendations |", error);
-        return []
-    }    
-  }
+    static getRecommendations(){
+        try {
+            return this.#meals.filter(meal => this.#recommendations.includes(meal.id))
+        } catch(error){
+            console.log("SKLT | ERROR getRecommendations |", error);
+            return []
+        }    
+    }
 
-  static getMeals(categoryId){
-    try {
-        return this.#meals.filter(meal => meal.category === categoryId)
-    } catch(error){
-        console.log("SKLT | ERROR getRegetMeals |", error);
-        return []
-    } 
-  }
+    static getMeals(categoryId){
+        try {
+            return this.#meals.filter(meal => meal.category === categoryId)
+        } catch(error){
+            console.log("SKLT | ERROR getRegetMeals |", error);
+            return []
+        } 
+    }
 }
