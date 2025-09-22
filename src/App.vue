@@ -10,6 +10,10 @@ import CafeTopBar from './components/CafeTopBar.vue';
 </template>
 
 <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
   .main{
     margin: 0;
     padding-top: 0;
@@ -27,10 +31,41 @@ import CafeTopBar from './components/CafeTopBar.vue';
     color: #060A06;
   }
 
-  @media (max-width: 768px) {
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #060A06;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  
+
+  @media (max-width: 1024px) {
     .main {
       padding-left: 1rem;
       padding-right: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
 </style>
