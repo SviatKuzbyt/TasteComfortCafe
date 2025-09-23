@@ -1,11 +1,13 @@
 <script setup>
 import CafeTopBar from './components/topbar/CafeTopBar.vue';
+import CafeFooter from './components/CafeFooter.vue';
 </script>
 
 <template>
   <div class="main">
     <cafe-top-bar></cafe-top-bar>
     <p>Hello!</p> 
+    <cafe-footer></cafe-footer>
   </div>
 </template>
 
@@ -31,7 +33,7 @@ import CafeTopBar from './components/topbar/CafeTopBar.vue';
     color: #060A06;
   }
 
-  h1, h2 {
+  h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', serif;
@@ -48,6 +50,15 @@ import CafeTopBar from './components/topbar/CafeTopBar.vue';
     font-size: 2rem;
   }
 
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
+
   
 
   @media (max-width: 1024px) {
@@ -62,6 +73,14 @@ import CafeTopBar from './components/topbar/CafeTopBar.vue';
 
     h2 {
       font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    h4 {
+      font-size: 1rem;
     }
 
     p {
