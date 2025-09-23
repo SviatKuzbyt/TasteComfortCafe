@@ -51,6 +51,15 @@ export default class MealService {
         }
     }
 
+    static getCategoryName(id){
+        try {
+            return this.#categories.find(category => category.id === Number(id)).name;
+        } catch(error){
+            console.log("SKLT | ERROR getCategoryName |", error);
+            return "No name"
+        }
+    }
+
     static getRecommendations(){
         try {
             return this.#meals.filter(meal => this.#recommendations.includes(meal.id))
@@ -62,7 +71,7 @@ export default class MealService {
 
     static getMeals(categoryId){
         try {
-            return this.#meals.filter(meal => meal.category === categoryId)
+            return this.#meals.filter(meal => meal.category === Number(categoryId))
         } catch(error){
             console.log("SKLT | ERROR getRegetMeals |", error);
             return []

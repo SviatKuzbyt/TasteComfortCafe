@@ -49,6 +49,12 @@ import CafeFooter from './components/CafeFooter.vue';
     font-size: 1.125rem;
   }
 
+  .basic-page {
+    padding: 0 10rem;
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (max-width: 1024px) {
     h1 {
       font-size: 2rem;
@@ -68,6 +74,10 @@ import CafeFooter from './components/CafeFooter.vue';
 
     p {
       font-size: 1rem;
+    }
+
+    .basic-page {
+      padding: 0 1rem;
     }
   }
 </style>

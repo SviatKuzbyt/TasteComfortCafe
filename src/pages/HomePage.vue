@@ -5,7 +5,7 @@
     import MealItem from '@/components/list/MealItem.vue';
     import ReviewItem from '@/components/list/ReviewItem.vue';
     import { ref } from 'vue';
-import ReviewService from '@/services/ReviewService';
+    import ReviewService from '@/services/ReviewService';
 
     const mealService = MealService
     const reviewService = ReviewService
@@ -16,7 +16,7 @@ import ReviewService from '@/services/ReviewService';
 
 <template>
     <about-cafe></about-cafe>
-    <body class="homeContent">
+    <body class="basic-page">
         <h2 class="subtittle">Рекомендуємо</h2>
         <cafe-list>
             <meal-item v-for="meal in recomendations" :key="meal.id" :meal="meal"/>
@@ -30,19 +30,8 @@ import ReviewService from '@/services/ReviewService';
 </template>
 
 <style>
-    .homeContent {
-        padding: 0 10rem;
-        display: flex;
-        flex-direction: column;
-    }
     .subtittle {
         margin-top: 3rem;
         margin-bottom: 1rem;
-    }
-
-    @media (max-width: 1024px) {
-        .homeContent {
-            padding: 0 1rem;
-        }
     }
 </style>
