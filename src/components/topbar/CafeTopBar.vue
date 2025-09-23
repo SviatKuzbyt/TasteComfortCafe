@@ -6,6 +6,7 @@
     import MealService from '@/services/MealService';
     import { ref, Transition, } from 'vue';
     import { defineMobile } from '@/composables/defineMobile';
+import router from '@/router';
 
     const mealService = MealService
     
@@ -17,10 +18,11 @@
         isMenuOpen.value = !isMenuOpen.value
     }
     const openDealPage = (id) => {
-        console.log("SKLT", id);
+        router.push('/meals/'+id)
+        changeMenu()
     }
     const openHomePage = () => {
-
+        router.push('/')
     }
 </script>
 
@@ -66,6 +68,7 @@
         padding: 0;
         margin: 0;
         height: 2rem;
+        cursor: pointer;
     }
 
     @media(max-width: 1024px){

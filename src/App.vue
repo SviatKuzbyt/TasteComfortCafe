@@ -6,7 +6,7 @@ import CafeFooter from './components/CafeFooter.vue';
 <template>
   <div class="main">
     <cafe-top-bar></cafe-top-bar>
-    <p>Hello!</p> 
+    <router-view></router-view>
     <cafe-footer></cafe-footer>
   </div>
 </template>
@@ -57,9 +57,6 @@ import CafeFooter from './components/CafeFooter.vue';
   h4 {
     font-size: 1.125rem;
   }
-
-
-  
 
   @media (max-width: 1024px) {
     .main {
