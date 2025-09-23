@@ -75,7 +75,7 @@
 
     @media(max-width: 1024px){
         .cafe-top-bar {
-            padding: 1rem;
+            padding: 0.5rem 1rem;
         }
     }
 

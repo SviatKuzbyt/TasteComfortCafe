@@ -18,7 +18,7 @@
 </script>
 
 <template>
-    <footer class="footer-back">
+    <footer class="footer-block">
         
         <h4 class="white-text tittle-margin">Контакти</h4>
         <text-icon
@@ -47,11 +47,12 @@
 </template>
 
 <style>
-    .footer-back{
+    .footer-block{
         background-color: #386641;
         padding: 2rem 10rem;
         display: flex;
         flex-direction: column;
+        margin-top: 3rem;
     }
     
     .white-text {
@@ -80,7 +81,7 @@
     }
 
     @media(max-width: 1024px){
-        .footer-back {
+        .footer-block {
             padding: 1.5rem 1rem;
         }
     }
