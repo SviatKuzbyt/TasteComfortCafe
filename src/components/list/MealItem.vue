@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div class="meal-block">
+    <div class="item-block">
         <img :src="'/public/images/meals/' + meal.image" alt="Фотографія страви" class="meal-img"/>
-        <div class="meal-texts">
+        <div class="item-texts">
             <h3>{{ meal.name }}</h3>
             <p class="meal-description">{{ meal.description }}</p>
             <h4>{{ meal.price }} грн</h4>
@@ -24,18 +24,6 @@
         margin-top: 0.5rem;
         margin-bottom: 1rem;
     }
-    .meal-block {
-        background-color: #EBF0EC;
-        padding: 1.5rem;
-        border-radius: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-    }
-    .meal-texts {
-        display: flex;
-        flex-direction: column;
-    }
 
     @media (max-width: 1024px) {
         .meal-img {
@@ -46,10 +34,6 @@
         .meal-description {
             margin-top: 0.25rem;
             margin-bottom: 0.5rem;
-        }
-        .meal-block {
-            padding: 1rem;
-            gap: 1.rem;
         }
     }
 </style>
