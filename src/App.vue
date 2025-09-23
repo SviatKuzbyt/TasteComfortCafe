@@ -1,5 +1,5 @@
 <script setup>
-import CafeTopBar from './components/CafeTopBar.vue';
+import CafeTopBar from './components/topbar/CafeTopBar.vue';
 </script>
 
 <template>
