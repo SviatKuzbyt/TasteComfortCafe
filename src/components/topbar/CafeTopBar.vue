@@ -6,7 +6,7 @@
     import MealService from '@/services/MealService';
     import { ref, Transition, } from 'vue';
     import { defineMobile } from '@/composables/defineMobile';
-import router from '@/router';
+    import router from '@/router';
 
     const mealService = MealService
     
@@ -54,13 +54,15 @@ import router from '@/router';
 
 <style>
     .cafe-top-bar{
+        position: sticky;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding: 1.5rem 10rem;
         align-items: center;
         margin: 0;
+        top: 0;
+        background-color: white;
     }
 
     .logo {
@@ -73,8 +75,7 @@ import router from '@/router';
 
     @media(max-width: 1024px){
         .cafe-top-bar {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding: 1rem;
         }
     }
 

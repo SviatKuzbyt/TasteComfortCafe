@@ -4,24 +4,15 @@ import CafeFooter from './components/CafeFooter.vue';
 </script>
 
 <template>
-  <div class="main">
     <cafe-top-bar></cafe-top-bar>
     <router-view></router-view>
     <cafe-footer></cafe-footer>
-  </div>
 </template>
 
 <style>
   body {
     margin: 0;
     padding: 0;
-  }
-  .main{
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 10rem;
-    padding-right: 10rem;
   }
 
   p {
@@ -59,11 +50,6 @@ import CafeFooter from './components/CafeFooter.vue';
   }
 
   @media (max-width: 1024px) {
-    .main {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
     h1 {
       font-size: 2rem;
     }

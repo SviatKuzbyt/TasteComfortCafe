@@ -17,6 +17,7 @@ defineProps({icon: Image, text: String})
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        align-items: center;
     }
 
     .icon-text-text {

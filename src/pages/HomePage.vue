@@ -1,14 +1,10 @@
 <script setup>
-import { onMounted } from 'vue';
-
-    onMounted(() => {
-        console.log("CREATE");
-        
-    })
+    import AboutCafe from '@/components/AboutCafe.vue';
 </script>
 
 <template>
-    <h1>Home page</h1>
+    <about-cafe></about-cafe>
+
 </template>
 
 <style>

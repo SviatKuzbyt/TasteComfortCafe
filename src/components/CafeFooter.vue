@@ -48,15 +48,12 @@
 
 <style>
     .footer-back{
-        position: absolute;
         background-color: #386641;
-        right: 0;
-        left: 0;
-        z-index: -1;
         padding: 2rem 10rem;
         display: flex;
         flex-direction: column;
     }
+    
     .white-text {
         color: white;
     }
