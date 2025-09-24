@@ -1,5 +1,5 @@
 <script setup>
-    defineProps({categories: Array})
+    defineProps({categories: Array, show: Boolean})
     const emit = defineEmits(["item-click", "close-click"])
 
     const clickItem = (id) => {
@@ -11,27 +11,29 @@
 </script>
 
 <template>
-    <div class="menu-back" @click="clickClose" >
-        <Transition name="slide" appear>
-            <menu class="menu-items-mobile" @click.stop>
-                <h1 class="menu-tittle">Меню</h1>
-                <p 
-                    class="menu-item-mobile" 
-                    v-for="category in categories" 
-                    :key="category.id"
-                    @click="clickItem(category.id)"
-                >
-                    {{ category.name }}
-                </p>
-        </menu>
-        </Transition>
-    </div>
+    <Transition name="fade">
+        <div class="menu-back" @click="clickClose" v-if="show"></div>
+    </Transition>
+    <Transition name="slide">
+        <menu class="menu-items-mobile" @click.stop v-if="show">
+            <h1 class="menu-tittle">Меню</h1>
+            <p 
+                class="menu-item-mobile" 
+                v-for="category in categories" 
+                :key="category.id"
+                @click="clickItem(category.id)"
+            >
+                {{ category.name }}
+            </p>
+    </menu>
+    </Transition>
+
 </template>
 
 <style>
     .menu-items-mobile {
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         bottom: 0;
@@ -40,6 +42,14 @@
         background-color: white;
         padding: 1rem;
         align-items: start;
+        z-index: 3;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.3s ease;
+    }
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
     }
 
     .menu-item-mobile {
@@ -64,6 +74,7 @@
         position:fixed;
         display: flex;
         background-color: rgb(0, 0, 0, 0.5);
+        z-index: 2;
     }
 
     .menu-tittle {

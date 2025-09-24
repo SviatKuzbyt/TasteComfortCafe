@@ -5,11 +5,19 @@ import CafeFooter from './components/CafeFooter.vue';
 
 <template>
     <cafe-top-bar></cafe-top-bar>
-    <router-view></router-view>
+    <Transition name="page-fade" mode="out-in">
+      <router-view />
+    </Transition>
     <cafe-footer></cafe-footer>
 </template>
 
 <style>
+.page-fade-enter-active, .page-fade-leave-active {
+  transition: opacity 0.5s;
+}
+.page-fade-enter-from, .page-fade-leave-to {
+  opacity: 0;
+}
   body {
     margin: 0;
     padding: 0;

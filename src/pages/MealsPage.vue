@@ -42,16 +42,18 @@
             <h1>{{ tittle }}</h1>
             <field-search v-model="searchText"/>
         </div>
-        
-        <empty-page 
-            :image="EmpyIcon" 
-            text="Незнайдено страв" 
-            v-if="filteredMeals.length === 0"
-        />
 
-        <cafe-list v-else>
-            <meal-item v-for="meal in filteredMeals" :key="meal.id" :meal="meal"/>
-        </cafe-list>   
+        <Transition name="fade" mode="out-in">
+            <empty-page 
+                v-if="filteredMeals.length === 0"
+                :image="EmpyIcon" 
+                text="Незнайдено страв" 
+            />
+
+            <cafe-list v-else>
+                <meal-item v-for="meal in filteredMeals" :key="meal.id" :meal="meal"/>
+            </cafe-list> 
+        </Transition>  
     </div>
 </template>
 
@@ -62,6 +64,14 @@
         justify-content: space-between;
         margin-bottom: 1rem;
         gap: 1rem;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
     }
     
     @media (max-width: 1024px){

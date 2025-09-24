@@ -11,6 +11,7 @@
 
 <style>
     .empty-block {
+        position: static;
         display: flex;
         flex-direction: column;
         flex: 0.5;

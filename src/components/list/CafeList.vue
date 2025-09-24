@@ -1,7 +1,7 @@
 <template>
-    <div class="item-list">
+    <TransitionGroup name="list" tag="div" class="item-list" ьщ>
         <slot></slot>
-    </div>
+    </TransitionGroup>
 </template>
 
 <style>
@@ -21,6 +21,24 @@
     .item-texts {
         display: flex;
         flex-direction: column;
+    }
+    
+    .list-enter-active, .list-leave-active {
+        transition: all 0.5s ease;
+    }
+    .list-enter-from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    .list-leave-to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    .list-move {
+        transition: transform 0.5s ease;
+    }
+    .list-leave-active {
+        position: absolute;
     }
 
     @media (max-width: 1024px) {

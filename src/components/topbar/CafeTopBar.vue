@@ -14,12 +14,15 @@
     const { isMobile } = defineMobile()
     const isMenuOpen = ref(false)
 
-    const changeMenu = () => {
-        isMenuOpen.value = !isMenuOpen.value
+    const openMenu = () => {
+        isMenuOpen.value = true
+    }
+    const closeMenu = () => {
+        isMenuOpen.value = false
     }
     const openDealPage = (id) => {
         router.push('/meals/'+id)
-        changeMenu()
+        closeMenu()
     }
     const openHomePage = () => {
         router.push('/')
@@ -30,7 +33,7 @@
     <header class="cafe-top-bar">
         <img :src="logo" alt="логотип" class="logo" @click="openHomePage"/>
 
-        <button-empty @click="changeMenu" v-if="isMobile">
+        <button-empty @click="openMenu" v-if="isMobile">
             <img :src="menuIcon" alt="відкрити меню"/>
         </button-empty>
 
@@ -40,15 +43,12 @@
             v-else
         ></cafe-menu>
 
-        <Transition name="fade">
-            <cafe-menu-mobile 
-                :categories="categories" 
-                @item-click="openDealPage"
-                @close-click="changeMenu"
-                v-if="isMenuOpen && isMobile"
-            ></cafe-menu-mobile>
-        </Transition>
-
+        <cafe-menu-mobile 
+            :categories="categories" 
+            @item-click="openDealPage"
+            @close-click="closeMenu"
+            :show="isMenuOpen && isMobile"
+        ></cafe-menu-mobile>
     </header>
 </template>
 
@@ -63,6 +63,7 @@
         margin: 0;
         top: 0;
         background-color: white;
+        z-index: 1;
     }
 
     .logo {
@@ -77,12 +78,5 @@
         .cafe-top-bar {
             padding: 0.5rem 1rem;
         }
-    }
-
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.3s ease;
-    }
-    .fade-enter-from, .fade-leave-to {
-        opacity: 0;
     }
 </style>
