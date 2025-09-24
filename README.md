@@ -1,29 +1,15 @@
-# taste-comfort-cafe
+# Taste Comfort Cafe (Смак і затишок)
 
-This template should help get you started developing with Vue 3 in Vite.
+Site for visitors of the "Смак і затишок" cafe. It contains basic information about the cafe and a detailed menu divided by categories with the possibility of searching for dishes. 
 
-## Recommended IDE Setup
+## Features
+- **heder and footer:** implemented page navigation and additional information posted
+- **main page:** information about cafes, list of main dishes and reviews
+- **dish page:** a list of dishes and a search box that automatically filters dishes by name
+- **adaptability:** convenient interface on PC and mobile devices
+- **Fake API:** a separate repository for convenient manipulation of site content
+- **Technologies used:** html/css/js, vue, vue-router
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Screenshots
+![Desktop](https://github.com/SviatKuzbyt/TasteComfortCafe/blob/main/other/screenshots/im1.jpg)
+![Mobile](https://github.com/SviatKuzbyt/TasteComfortCafe/blob/main/other/screenshots/im2.jpg)
