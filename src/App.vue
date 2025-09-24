@@ -53,6 +53,7 @@ import CafeFooter from './components/CafeFooter.vue';
     padding: 0 10rem;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
 
   @media (max-width: 1024px) {

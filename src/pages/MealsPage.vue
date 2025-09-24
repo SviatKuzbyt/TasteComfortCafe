@@ -3,7 +3,7 @@
     import CafeList from '@/components/list/CafeList.vue';
     import MealItem from '@/components/list/MealItem.vue';
     import FieldSearch from '@/components/FieldSearch.vue';
-    import { ref } from 'vue';
+    import { computed, ref } from 'vue';
     import { useRoute, onBeforeRouteUpdate } from 'vue-router';
 
     const mealService = MealService
@@ -24,6 +24,14 @@
     onBeforeRouteUpdate((to) => {
       loadData(to.params.categoryId)
     })
+
+    const filteredMeals = computed(() => {
+        if (!searchText.value) return meals.value
+        return meals.value.filter(meal =>
+            meal.name.toLowerCase().includes(searchText.value.toLowerCase()) ||
+            meal.description.toLowerCase().includes(searchText.value.toLowerCase())
+        )
+    })
 </script>
 
 <template>
@@ -34,7 +42,7 @@
         </div>
         
         <cafe-list>
-            <meal-item v-for="meal in meals" :key="meal.id" :meal="meal"/>
+            <meal-item v-for="meal in filteredMeals" :key="meal.id" :meal="meal"/>
         </cafe-list>   
     </div>
 </template>
