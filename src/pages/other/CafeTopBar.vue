@@ -13,6 +13,7 @@
     const categories = mealService.getCategories() 
     const { isMobile } = defineMobile()
     const isMenuOpen = ref(false)
+    const selectedCategory = ref(null)
 
     const openMenu = () => {
         isMenuOpen.value = true
@@ -22,10 +23,12 @@
     }
     const openDealPage = (id) => {
         router.push('/meals/'+id)
+        selectedCategory.value = id
         closeMenu()
     }
     const openHomePage = () => {
         router.push('/')
+        selectedCategory.value = null
     }
 </script>
 
@@ -38,7 +41,8 @@
         </button-empty>
 
         <cafe-menu 
-            :categories="categories" 
+            :categories="categories"
+            :selected="selectedCategory" 
             @item-click="openDealPage"
             v-else
         ></cafe-menu>
