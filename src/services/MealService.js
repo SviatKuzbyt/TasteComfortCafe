@@ -1,4 +1,5 @@
 export default class MealService {
+    // DATA
     static #categories = [
         {id: 1, name: "Холодні страви"},
         {id: 2, name: "Гарячі страви"},
@@ -42,6 +43,7 @@ export default class MealService {
 
     static #recommendations = [1, 8, 15, 21]
 
+    // METHODS
     static getCategories() {
         try {
             return this.#categories;

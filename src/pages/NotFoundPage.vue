@@ -7,5 +7,4 @@
     <div class="basic-page">
         <empty-page :image="ErrorIcon" text="Сторінку не знайдено :("/>
     </div>
-    
 </template>

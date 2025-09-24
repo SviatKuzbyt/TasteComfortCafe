@@ -45,13 +45,6 @@
         z-index: 3;
     }
 
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.3s ease;
-    }
-    .fade-enter-from, .fade-leave-to {
-        opacity: 0;
-    }
-
     .menu-item-mobile {
         margin-left: 0rem;
         min-height: 3rem;
@@ -81,6 +74,13 @@
         padding-bottom: 0.2em;
     }
 
+    /* Animations */
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.3s ease;
+    }
+    .fade-enter-from, .fade-leave-to {
+        opacity: 0;
+    }
     .slide-enter-active, .slide-leave-active {
         transition: transform 0.3s ease;
     }

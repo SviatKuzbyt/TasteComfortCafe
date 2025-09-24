@@ -1,8 +1,12 @@
 <script setup>
-defineOptions({
-  name: "text-icon"
-})
-defineProps({icon: Image, text: String})
+    defineOptions({name: "text-icon"})
+    defineProps({
+        icon: {
+            type: String,
+            required: true
+        }, 
+        text: String
+    })
 </script>
 
 <template>

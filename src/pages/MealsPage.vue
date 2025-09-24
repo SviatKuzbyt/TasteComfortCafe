@@ -15,6 +15,14 @@
     const meals = ref([])
     const searchText = ref("")
 
+    const filteredMeals = computed(() => {
+        if (!searchText.value) return meals.value
+        return meals.value.filter(meal =>
+            meal.name.toLowerCase().includes(searchText.value.toLowerCase()) ||
+            meal.description.toLowerCase().includes(searchText.value.toLowerCase())
+        )
+    })
+
     const loadData = (id) => {
       tittle.value = mealService.getCategoryName(Number(id))
       meals.value = mealService.getMeals(Number(id))
@@ -25,14 +33,6 @@
 
     onBeforeRouteUpdate((to) => {
       loadData(to.params.categoryId)
-    })
-
-    const filteredMeals = computed(() => {
-        if (!searchText.value) return meals.value
-        return meals.value.filter(meal =>
-            meal.name.toLowerCase().includes(searchText.value.toLowerCase()) ||
-            meal.description.toLowerCase().includes(searchText.value.toLowerCase())
-        )
     })
 </script>
 
@@ -66,6 +66,7 @@
         gap: 1rem;
     }
 
+    /* Animations */
     .fade-enter-active, .fade-leave-active {
         transition: opacity 0.5s ease;
     }

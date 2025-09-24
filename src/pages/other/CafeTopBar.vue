@@ -1,10 +1,10 @@
 <script setup>
-    import CafeMenuMobile from './CafeMenuMobile.vue';
+    import CafeMenuMobile from '@/components/topbar/CafeMenuMobile.vue';
     import logo from '@/assets/icons/logo.svg'
-    import CafeMenu from './CafeMenu.vue';
+    import CafeMenu from '@/components/topbar/CafeMenu.vue';
     import menuIcon from '@/assets/icons/menu_ic.svg'
     import MealService from '@/services/MealService';
-    import { ref, Transition, } from 'vue';
+    import { ref } from 'vue';
     import { defineMobile } from '@/composables/defineMobile';
     import router from '@/router';
 

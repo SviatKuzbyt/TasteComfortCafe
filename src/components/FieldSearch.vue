@@ -1,9 +1,7 @@
 <script setup>
     import SearchIcon from '@/assets/icons/ic_search.svg'
 
-    defineProps({
-        modelValue: String
-    })
+    defineProps({modelValue: String})
     const emit = defineEmits(["update:modelValue"])
 
     const onInput = (e) => {
@@ -20,7 +18,7 @@
             name="search"
             class="field-search-text"
             placeholder="Пошук..."
-        ></input>
+        />
     </div>
 </template>
 

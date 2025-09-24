@@ -1,5 +1,5 @@
 <template>
-    <TransitionGroup name="list" tag="div" class="item-list" ьщ>
+    <TransitionGroup name="list" tag="div" class="item-list">
         <slot></slot>
     </TransitionGroup>
 </template>
@@ -23,6 +23,7 @@
         flex-direction: column;
     }
     
+    /* Animations */
     .list-enter-active, .list-leave-active {
         transition: all 0.5s ease;
     }

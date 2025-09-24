@@ -1,6 +1,6 @@
 <script setup>
     import MealService from '@/services/MealService';
-    import AboutCafe from '@/components/AboutCafe.vue';
+    import AboutCafe from '@/pages/other/AboutCafe.vue';
     import CafeList from '@/components/list/CafeList.vue';
     import MealItem from '@/components/list/MealItem.vue';
     import ReviewItem from '@/components/list/ReviewItem.vue';
@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <about-cafe></about-cafe>
+    <about-cafe/>
     <body class="basic-page">
         <h2 class="subtittle">Рекомендуємо</h2>
         <cafe-list>

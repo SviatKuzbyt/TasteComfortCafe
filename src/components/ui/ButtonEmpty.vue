@@ -1,7 +1,5 @@
 <script setup>
-defineOptions({
-  name: "button-empty"
-})
+    defineOptions({name: "button-empty"})
 </script>
 
 <template>

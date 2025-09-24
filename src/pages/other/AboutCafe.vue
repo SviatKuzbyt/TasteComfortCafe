@@ -47,7 +47,6 @@
         height: fit-content;
     }
 
-    
     @media(max-width: 1024px){
         .about-block{
             padding: 1rem;

@@ -5,7 +5,7 @@
 <template>
     <div class="empty-block" >
         <img :src="image" alt="Декоративне зображення" class="empty-img"/>
-        <p class="empty-text">{{ text }}</p>
+        <h3 class="empty-text">{{ text }}</h3>
     </div>
 </template>
 
@@ -21,9 +21,9 @@
     }
 
     .empty-img {
-        height: 6rem;
+        height: 8rem;
         width: auto;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .empty-text {

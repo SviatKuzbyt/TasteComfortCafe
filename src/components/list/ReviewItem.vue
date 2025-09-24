@@ -4,7 +4,11 @@
 
 <template>
     <div class="item-block">
-        <img :src="'/public/images/persons/' + review.avatar" alt="Фотографія відвідувача" class="review-img"/>
+        <img 
+            :src="'/public/images/persons/' + review.avatar" 
+            alt="Фотографія відвідувача" 
+            class="review-img"
+        />
         <div class="item-texts">
             <h4>{{ review.person }}</h4>
             <p class="review-description">{{ review.text }}</p>

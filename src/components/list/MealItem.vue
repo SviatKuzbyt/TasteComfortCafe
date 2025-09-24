@@ -4,7 +4,11 @@
 
 <template>
     <div class="item-block">
-        <img :src="'/public/images/meals/' + meal.image" alt="Фотографія страви" class="meal-img"/>
+        <img 
+            :src="'/public/images/meals/' + meal.image" 
+            alt="Фотографія страви" 
+            class="meal-img"
+        />
         <div class="item-texts">
             <h3>{{ meal.name }}</h3>
             <p class="meal-description">{{ meal.description }}</p>
