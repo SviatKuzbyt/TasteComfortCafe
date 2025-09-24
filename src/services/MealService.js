@@ -56,7 +56,7 @@ export default class MealService {
             return this.#categories.find(category => category.id === Number(id)).name;
         } catch(error){
             console.log("SKLT | ERROR getCategoryName |", error);
-            return "No name"
+            return "Категорію не знайдено"
         }
     }
 

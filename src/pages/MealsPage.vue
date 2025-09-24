@@ -3,6 +3,8 @@
     import CafeList from '@/components/list/CafeList.vue';
     import MealItem from '@/components/list/MealItem.vue';
     import FieldSearch from '@/components/FieldSearch.vue';
+    import EmptyPage from '@/components/EmptyPage.vue';
+    import EmpyIcon from '@/assets/icons/empty_ic.svg'
     import { computed, ref } from 'vue';
     import { useRoute, onBeforeRouteUpdate } from 'vue-router';
 
@@ -41,7 +43,13 @@
             <field-search v-model="searchText"/>
         </div>
         
-        <cafe-list>
+        <empty-page 
+            :image="EmpyIcon" 
+            text="Незнайдено страв" 
+            v-if="filteredMeals.length === 0"
+        />
+
+        <cafe-list v-else>
             <meal-item v-for="meal in filteredMeals" :key="meal.id" :meal="meal"/>
         </cafe-list>   
     </div>
